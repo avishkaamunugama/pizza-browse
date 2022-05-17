@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "thumbnail_beef_sizzler.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
