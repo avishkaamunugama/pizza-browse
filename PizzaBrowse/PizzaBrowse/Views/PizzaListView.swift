@@ -18,6 +18,8 @@ struct PizzaListView: View {
     var body: some View {
         NavigationView {
             VStack {
+                
+                // Pizza type filter
                 Picker("Filter pizzas by type.", selection:$filterType) {
                     ForEach(FilterType.allCases, id:\.self) { type in
                         Text(type.displayName)
@@ -26,6 +28,7 @@ struct PizzaListView: View {
                 .pickerStyle(.segmented)
                 .padding(.bottom, 10)
                 
+                // List of all saved pizzas
                 List {
                     ForEach(pizzaList.filter(byType: filterType, bySearch: searchText), id:\.name) { pizza in
                         NavigationLink(destination:PizzaDetailsView(pizza: pizza)) {

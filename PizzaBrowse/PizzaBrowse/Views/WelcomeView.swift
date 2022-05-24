@@ -11,6 +11,8 @@ enum ScreenType {
     case pizzas, favourites
 }
 
+// Only shown in tablet app
+
 struct WelcomeView: View {
     
     var screenType: ScreenType

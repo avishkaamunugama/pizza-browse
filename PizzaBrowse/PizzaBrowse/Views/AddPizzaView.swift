@@ -28,6 +28,8 @@ struct AddPizzaView: View {
     var body: some View {
         NavigationView {
             Form {
+                
+                // Pizza type selection
                 Picker("Pizza type:", selection: $type) {
                     Text("Meat")
                         .tag(FilterType.meat)
@@ -36,7 +38,10 @@ struct AddPizzaView: View {
                 }
                 .pickerStyle(.inline)
                 
+                // Pizza name text field
                 TextField("Name", text:$name)
+                
+                // Pizza ingedients text view
                 ZStack {
                     if ingredients.isEmpty {
                         HStack {
@@ -48,8 +53,9 @@ struct AddPizzaView: View {
                     TextEditor(text:$ingredients)
                 }
                 
-                TextField("ImageName", text:$imageName)
-                TextField("ThumbnailImageName", text:$thumbnailImageName)
+                // Pizza image and theumbnal name
+                TextField("Image Name", text:$imageName)
+                TextField("Thumbnail Image Name", text:$thumbnailImageName)
                 
             }
             .navigationTitle("Add Pizza")
@@ -78,6 +84,7 @@ struct AddPizzaView: View {
         
     }
     
+    // Save new pizza
     func saveNewPizza() {
         let newPizza = Pizza(name: name, ingredients: arrangeIngredients(ingredients), imageName: validateImage(imageName), thumbnailName: validateImage(thumbnailImageName), type: type)
         
@@ -95,6 +102,7 @@ struct AddPizzaView: View {
         }
     }
     
+    // Image validation if image by name not fould adds placeholder default image
     func validateImage(_ img:String) -> String {
         return (UIImage(named: img) != nil) ? img : "no_image"
     }

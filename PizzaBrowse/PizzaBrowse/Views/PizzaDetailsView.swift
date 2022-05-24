@@ -13,13 +13,17 @@ struct PizzaDetailsView: View {
     
     var body: some View {
         ScrollView {
+            
             VStack(alignment: .leading){
+                
+                // Pizza image
                 Image(pizza.imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(height: 200)
                     .clipped()
                 
+                // Pizza name and favourite star
                 VStack(alignment: .leading, spacing: 10) {
                     HStack {
                         Text(pizza.name)
@@ -29,6 +33,7 @@ struct PizzaDetailsView: View {
                             .font(.title)
                     }
                     
+                    // List of all ingredients
                     Text(listIngredients(pizza.ingredients))
                 }
                 .padding()

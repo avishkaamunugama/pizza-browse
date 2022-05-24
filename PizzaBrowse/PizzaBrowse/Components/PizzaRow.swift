@@ -12,6 +12,8 @@ struct PizzaRow: View {
     var pizza:Pizza
     
     var body: some View {
+        
+        // Pizza list row component
         VStack(alignment: .leading) {
             HStack {
                 Image(pizza.thumbnailName)

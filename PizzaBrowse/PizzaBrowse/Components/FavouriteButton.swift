@@ -13,6 +13,8 @@ struct FavouriteButton: View {
     var pizza: Pizza
     
     var body: some View {
+        
+        // Favourites button
         Button {
             if favourites.contains(pizza) {
                 favourites.remove(pizza)

@@ -8,17 +8,20 @@
 import Foundation
 import UIKit
 
+// Adds bullet poitns to ingredients
 func listIngredients(_ str:String) -> String {
     if str.isEmpty { return "" }
     return "● \(str.replacingOccurrences(of: ",", with: "\n● "))"
 }
 
+// Arranges the ingredients
 func arrangeIngredients(_ str:String) -> String {
     let cleanedStr = str.replacingOccurrences(of: ",", with: "\n")
     let strippedArr = cleanedStr.components(separatedBy: .newlines).filter({ $0 != ""})
     return strippedArr.joined(separator: ",")
 }
- 
+
+// Loads the pizza details from json file
 extension Bundle {
     func decode<T: Decodable>(_ type: T.Type, from file: String) -> T {
         guard let url = self.url(forResource: file, withExtension: nil) else {

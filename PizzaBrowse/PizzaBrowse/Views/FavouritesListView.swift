@@ -14,6 +14,8 @@ struct FavouritesListView: View {
     
     var body: some View {
         NavigationView {
+            
+            // List of all favourite pizzas
             List(filterFavourites(), id:\.name) { pizza in
                 NavigationLink(destination:PizzaDetailsView(pizza: pizza)) {
                     PizzaRow(pizza: pizza)
@@ -31,6 +33,7 @@ struct FavouritesListView: View {
         }
     }
     
+    // Favourites filter
     func filterFavourites() ->[Pizza] {
         var filteredList:[Pizza] = []
         
