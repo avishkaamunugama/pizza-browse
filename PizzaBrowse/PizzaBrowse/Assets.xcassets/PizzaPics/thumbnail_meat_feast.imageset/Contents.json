@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "thumbnail_meat_feast.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
